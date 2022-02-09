@@ -1,6 +1,6 @@
-resource "kubernetes_service" "nginx" {
+resource "kubernetes_service" "alb" {
   metadata {
-    name = "adam-nginx"
+    name = "adam-alb"
   }
   spec {
     selector = {

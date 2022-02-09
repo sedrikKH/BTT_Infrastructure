@@ -9,6 +9,6 @@ resource "aws_route53_record" "www" {
   type = "CNAME"
   ttl  = "300"
   #[kubernetes_service.nginx.status.0.load_balancer.0.ingress.0.hostname]
-  records = [kubernetes_service.nginx.status.0.load_balancer.0.ingress.0.hostname]
+  records = [kubernetes_service.alb.status.0.load_balancer.0.ingress.0.hostname]
 
 }
