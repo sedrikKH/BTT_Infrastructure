@@ -29,3 +29,4 @@ override.tf.json
 # example: *tfplan*
 
 *.hcl
+*kubeconfig_Adam_for_BTT_Cloud*
