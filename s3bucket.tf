@@ -7,8 +7,5 @@ terraform {
     key    = "btt-infrastruvture-state/terraform.tfstate"
     region = "eu-central-1"
 
-    # Имя таблицы в DynamoDB, которое определили в самом начале
-    #    dynamodb_table = "yatakoi-terraform-state-locks"
-    #    encrypt = true
   }
 }
