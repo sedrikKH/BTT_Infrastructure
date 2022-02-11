@@ -12,11 +12,11 @@ data "aws_availability_zones" "available" {}
 locals {
   cluster_name = "Adam_for_BTT_Cloud" #-${random_string.suffix.result} - использовать для генерации случайного значения
 }
-
-resource "random_string" "suffix" {
-  length  = 2
-  special = false
-}
+#  Random functions
+#resource "random_string" "suffix" {
+#  length  = 2
+#  special = false
+#}
 
 
 module "vpc" {

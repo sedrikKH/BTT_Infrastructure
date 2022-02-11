@@ -34,10 +34,5 @@ output "cluster_name" {
 }
 
 output "lb_hostname" {
-  #value = kubernetes_service.example.status.0.load_balancer.0.ingress.0.hostname
   value = kubernetes_service.alb.status.0.load_balancer.0.ingress.0.hostname
 }
-
-#output "lb_ip" {
-#  value = kubernetes_service.nginx.status.0.load_balancer.0.ingress.0.ip
-#}
