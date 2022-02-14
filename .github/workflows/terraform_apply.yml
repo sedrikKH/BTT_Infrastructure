@@ -23,6 +23,3 @@ jobs:
 
     - name: Terraform apply
       run: terraform apply -auto-approve -input=false
-
-    - name: Copy KubeConfig to s3
-      run: aws s3 cp "./kubeconfig_Adam_for_BTT_Cloud" s3://btt-state-bucket/
