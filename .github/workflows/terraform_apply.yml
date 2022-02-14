@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
 name: Terraform Apply
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 on: [push]
 
 jobs:
@@ -8,25 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    
+
     - name: Verify Terraform version
       run: terraform --version
 
     - name: Terraform init
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform init -input=false
 
     - name: Terraform validation
       run: terraform validate
 
     - name: Terraform apply
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform apply -auto-approve -input=false
-      
-    - name: Copy KubeConfig to s3  
+
+    - name: Copy KubeConfig to s3
       run: aws s3 cp “./kubeconfig_Adam_for_BTT_Cloud” s3://btt-state-bucket/
-      
