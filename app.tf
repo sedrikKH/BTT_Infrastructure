@@ -24,7 +24,7 @@ resource "kubernetes_deployment" "adam-app" {
 
       spec {
         container {
-          image = "sedrikkh/node-web-app"
+          image = "sedrikkh/node-web-app:latest"
           name  = "adam-app"
           port {
             container_port = 3000
