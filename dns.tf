@@ -3,7 +3,7 @@
 # }
 
 resource "aws_route53_record" "www" {
-  zone_id = "Z0642296DYOC6DE9E820"
+  zone_id = "Z06332603PCNRYDKRLB1Y"
   #zone_id = aws_route53_zone.sedrik_kh_ua.zone_id
   name = "btt-cloud.sedrik.kh.ua"
   type = "CNAME"
